@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname(); // ✅ properly define pathname
+  const pathname = usePathname();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -36,40 +36,54 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/about"
-              className={
-                pathname === "/about"
-                  ? "font-bold mr-6"
-                  : "text-blue-500 mr-4"
-              }
-            >
-              About
+              <Link
+                href="/about"
+                className={`text-foreground hover:text-primary transition-colors ${
+                  pathname === "/about" ? "font-bold" : ""
+                }`}
+              >
+                About
+              </Link>
+
+           
+
+              <Link
+                href="/services"
+                className={`text-foreground hover:text-primary transition-colors ${
+                  pathname === "/services" ? "font-bold" : ""
+                }`}
+              >
+                Services
+              </Link>
+
+              <Link
+                href="/portfolio"
+                className={`text-foreground hover:text-primary transition-colors ${
+                  pathname === "/portfolio" ? "font-bold" : ""
+                }`}
+              >
+                Portfolio
+              </Link>
+
+              <Link
+                href="/testimonials"
+                className={`text-foreground hover:text-primary transition-colors ${
+                  pathname === "/testimonials" ? "font-bold" : ""
+                }`}
+              >
+                Testimonials
+              </Link>
+
+            <Link href="/contact-us" passHref>
+              <Button
+                asChild
+                className={`bg-primary text-white hover:bg-primary/90 ${
+                  pathname === "/contact-us" ? "font-bold" : ""
+                }`}
+              >
+                <span>Contact Us</span>
+              </Button>
             </Link>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Portfolio
-            </button>
-            <button
-              onClick={() => scrollToSection("testimonials")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Testimonials
-            </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary text-white hover:bg-primary/90"
-            >
-              Contact Us
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -87,27 +101,29 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t pt-4">
             <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+              <Link
+                href="/about"
+                className={`text-foreground hover:text-primary transition-colors ${
+                  pathname === "/about" ? "font-bold" : ""
+                }`}
               >
                 About
-              </button>
+              </Link>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-colors"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection("portfolio")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-colors"
               >
                 Portfolio
               </button>
               <button
                 onClick={() => scrollToSection("testimonials")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-colors"
               >
                 Testimonials
               </button>
