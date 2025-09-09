@@ -6,7 +6,7 @@ import { MinusIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
-function InputOTP({
+function CustomInputOTP({
   className,
   containerClassName,
   ...props
@@ -67,4 +67,21 @@ function InputOTPSlot({
   );
 }
 
-// export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator };
+function InputOTPSeparator() {
+  return (
+    <div
+      data-slot="input-otp-separator"
+      className="flex items-center justify-center px-2"
+    >
+      <MinusIcon className="h-4 w-4 text-muted-foreground" />
+    </div>
+  );
+}
+
+// ✅ Export them only once
+export {
+  CustomInputOTP as InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+};
