@@ -59,15 +59,25 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={{
-        Chevron: ({ orientation, className, ...props }: { orientation: "left" | "right"; className?: string }) =>
-          orientation === "left" ? (
-            <ChevronLeft className={cn("size-4", className)} {...props} />
-          ) : (
-            <ChevronRight className={cn("size-4", className)} {...props} />
-          ),
-      }}
-      {...props}
+components={{
+  Chevron: ({
+    orientation,
+    className,
+    ...props
+  }: {
+    orientation?: "left" | "right" | "up" | "down"
+    className?: string
+  }) =>
+    orientation === "left" ? (
+      <ChevronLeft className={cn("size-4", className)} {...props} />
+    ) : orientation === "right" ? (
+      <ChevronRight className={cn("size-4", className)} {...props} />
+    ) : (
+      <span className={cn("size-4", className)} {...props} />
+    ),
+}}
+
+
     />
   );
 }
