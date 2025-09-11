@@ -72,7 +72,7 @@ export function Header() {
             {/* Logo Text */}
             <div className="leading-tight">
               <h1 className="text-2xl font-extrabold tracking-wide text-primary">
-                HAMTEC <span className="text-secondary">PROJECTS</span>
+                HAMTEC PROJECTS
               </h1>
               <p className="text-sm text-muted-foreground tracking-wide">
                 Building Excellence, Managing Success
