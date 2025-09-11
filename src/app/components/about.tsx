@@ -2,10 +2,9 @@
 
 import { Card, CardContent } from "./UIs/card";
 import { Target, Eye, Heart } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -13,9 +12,13 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" as const },
+  },
 };
 
 export function About() {
@@ -23,7 +26,6 @@ export function About() {
     <section id="about" className="py-20 bg-muted/20 overflow-hidden">
       <div className="container mx-auto px-4 py-8">
         {/* ABOUT HEADER */}
-
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
@@ -54,7 +56,7 @@ export function About() {
           <motion.div
             variants={item}
             whileHover={{ y: -10, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
           >
             <Card className="text-center p-8 hover:shadow-xl transition-shadow">
               <CardContent className="pt-6">
@@ -62,7 +64,7 @@ export function About() {
                   className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.9, type: "spring" }}
+                  transition={{ duration: 0.9, type: "spring" as const }}
                   viewport={{ once: false }}
                 >
                   <Eye className="w-8 h-8 text-white" />
@@ -82,7 +84,7 @@ export function About() {
           <motion.div
             variants={item}
             whileHover={{ y: -10, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
           >
             <Card className="text-center p-8 hover:shadow-xl transition-shadow">
               <CardContent className="pt-6">
@@ -90,7 +92,7 @@ export function About() {
                   className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.9, type: "spring" }}
+                  transition={{ duration: 0.9, type: "spring" as const }}
                   viewport={{ once: false }}
                 >
                   <Target className="w-8 h-8 text-white" />
@@ -120,7 +122,7 @@ export function About() {
           <motion.div
             variants={item}
             whileHover={{ y: -10, scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            transition={{ type: "spring" as const, stiffness: 200, damping: 15 }}
           >
             <Card className="text-center p-8 hover:shadow-xl transition-shadow">
               <CardContent className="pt-6">
@@ -128,7 +130,7 @@ export function About() {
                   className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.9, type: "spring" }}
+                  transition={{ duration: 0.9, type: "spring" as const }}
                   viewport={{ once: false }}
                 >
                   <Heart className="w-8 h-8 text-white" />
