@@ -78,7 +78,6 @@ function InputOTPSeparator() {
   );
 }
 
-// ✅ Export them only once
 export {
   CustomInputOTP as InputOTP,
   InputOTPGroup,

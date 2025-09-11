@@ -14,9 +14,7 @@ import {
 } from "recharts";
 import { cn } from "./utils";
 
-// --------------------
-// Types
-// --------------------
+
 type LegendPayloadItem = {
   value: string;
   color: string;
@@ -42,9 +40,7 @@ type CustomTooltipProps = {
   labelFormatter?: (label: string) => string;
 };
 
-// --------------------
-// Custom Tooltip
-// --------------------
+
 const CustomTooltip: React.FC<CustomTooltipProps> = ({
   payload,
   className,
@@ -86,9 +82,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
   );
 };
 
-// --------------------
-// Custom Legend
-// --------------------
+
 const CustomLegend: React.FC<CustomLegendProps> = ({
   payload,
   verticalAlign,
@@ -120,9 +114,7 @@ const CustomLegend: React.FC<CustomLegendProps> = ({
   );
 };
 
-// --------------------
-// Example Chart Wrapper
-// --------------------
+
 const ExampleChart = () => {
   const data = [
     { name: "Jan", uv: 4000, pv: 2400 },

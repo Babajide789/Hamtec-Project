@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
-import * as MenubarPrimitive from "@radix-ui/react-menubar"; // ✅ Correct import alias
+import * as MenubarPrimitive from "@radix-ui/react-menubar";
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
-// Wrapper around Menubar.Root
+
 function Menubar({
   className,
   ...props
