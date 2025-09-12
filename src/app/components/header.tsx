@@ -57,28 +57,32 @@ export function Header() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-3 group">
-            
-            <div className="relative w-14 h-14 flex-shrink-0">
-              <Image
-                src="/logo1.jpg"
-                alt="Hamtec Projects Logo"
-                fill
-                className="object-contain transition-transform duration-300 group-hover:scale-105"
-                priority
-              />
-            </div>
+          <Link 
+  href="/" 
+  className="flex items-center gap-2 sm:gap-3 group"
+>
+  {/* Logo Image */}
+  <div className="relative w-10 h-10 sm:w-14 sm:h-14 flex-shrink-0">
+    <Image
+      src="/logo1.jpg"
+      alt="Hamtec Projects Logo"
+      fill
+      className="object-contain transition-transform duration-300 group-hover:scale-105"
+      priority
+    />
+  </div>
 
-            {/* Logo Text */}
-            <div className="leading-tight">
-              <h1 className="text-2xl font-extrabold tracking-wide text-primary">
-                HAMTEC PROJECTS
-              </h1>
-              <p className="text-sm text-muted-foreground tracking-wide">
-                Building Excellence, Managing Success
-              </p>
-            </div>
-          </Link>
+  {/* Logo Text */}
+  <div className="leading-tight">
+    <h1 className="text-base sm:text-2xl font-extrabold tracking-wide text-primary">
+      HAMTEC <span className="text-primary">PROJECTS</span>
+    </h1>
+    <p className="text-[10px] sm:text-sm text-muted-foreground tracking-wide">
+      Building Excellence, Managing Success
+    </p>
+  </div>
+</Link>
+
 
 
 

@@ -34,7 +34,7 @@ export function Services() {
       description:
         "Residential, commercial, and industrial projects delivered with precision and quality.",
       icon: Hammer,
-      src: "/img1.jpg",
+      src: "/portIMG5.jpg",
     },
     {
       title: "Landscaping & Outdoor Solutions",

@@ -38,28 +38,28 @@ export function Portfolio() {
       category: "Construction",
       description:
         "Complete home renovation including kitchen, bathrooms, and living spaces.",
-      src: "/servIMG1.jpg",
+      src: "/servIMG2.jpg",
     },
     {
       title: "Office Building Construction",
       category: "Commercial",
       description:
         "Modern office building with sustainable design and efficient workflow spaces.",
-      src: "/servIMG2.jpg",
+      src: "/portIMG2.jpg",
     },
     {
       title: "Backyard Landscaping",
       category: "Landscaping",
       description:
         "Complete backyard transformation with modern design and sustainable plantings.",
-      src: "/servIMG3.jpg",
+      src: "/portIMG3.jpg",
     },
     {
       title: "Commercial Cleaning & Maintenance",
       category: "Cleaning",
       description:
         "Ongoing cleaning services for office buildings and commercial spaces.",
-      src: "/servIMG4.jpg",
+      src: "/img1.jpg",
     },
     {
       title: "Infrastructure Support Projects",
