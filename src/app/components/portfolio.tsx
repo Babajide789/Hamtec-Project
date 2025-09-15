@@ -10,19 +10,18 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.25 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
-
 
 interface Project {
   title: string;
@@ -100,9 +99,9 @@ export function Portfolio() {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={container}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          animate="show"
         >
+
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -134,10 +133,10 @@ export function Portfolio() {
                     whileInView={{ scale: 1 }}
                     whileHover={{ scale: 1.15 }}
                     transition={{
-                      duration: 0.5,
-                      delay: index * 0.25 + 0.3,
+                      duration: 0.4,
+                      delay: index * 0.1 + 0.1,
                       type: "spring",
-                      stiffness: 300,
+                      stiffness: 350,
                     }}
                     viewport={{ once: false }}
                   >
@@ -145,6 +144,7 @@ export function Portfolio() {
                       {project.category}
                     </Badge>
                   </motion.div>
+
                 </div>
 
                 {/* TEXTS */}
