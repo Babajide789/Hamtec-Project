@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Badge } from "./UIs/badge";
 import { motion, Variants } from "framer-motion";
 
-
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -83,9 +82,8 @@ export function Portfolio() {
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: false, amount: 0.3 }}
         >
           <h2 className="text-4xl font-bold mb-6">Our Portfolio</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -101,7 +99,6 @@ export function Portfolio() {
           initial="hidden"
           animate="show"
         >
-
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -130,7 +127,7 @@ export function Portfolio() {
                   {/* BADGE FRAMER EFFECTS */}
                   <motion.div
                     initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
+                    animate={{ scale: 1 }}
                     whileHover={{ scale: 1.15 }}
                     transition={{
                       duration: 0.4,
@@ -138,13 +135,11 @@ export function Portfolio() {
                       type: "spring",
                       stiffness: 350,
                     }}
-                    viewport={{ once: false }}
                   >
                     <Badge className="absolute top-4 left-4 bg-primary text-white cursor-pointer">
                       {project.category}
                     </Badge>
                   </motion.div>
-
                 </div>
 
                 {/* TEXTS */}

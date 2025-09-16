@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-
 const buttonContainer = {
   hidden: { opacity: 0, scale: 0.9 },
   show: {
@@ -13,11 +12,10 @@ const buttonContainer = {
     scale: 1,
     transition: {
       duration: 0.6,
-      staggerChildren: 0.3, 
+      staggerChildren: 0.3,
     },
   },
 };
-
 
 const buttonItem = {
   hidden: { opacity: 0, y: 20 },
@@ -27,7 +25,7 @@ const buttonItem = {
 export function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700 text-white overflow-hidden">
-      {/* OVERLAY VARIANT*/}
+      {/* OVERLAY */}
       <motion.div
         className="absolute inset-0 bg-black/50 z-10"
         initial={{ opacity: 0 }}
@@ -35,7 +33,7 @@ export function Hero() {
         transition={{ duration: 1 }}
       />
 
-      {/* BACKGROUND IMAGE*/}
+      {/* BACKGROUND IMAGE */}
       <Image
         src="/backgroundIMG.jpg"
         alt="Construction workers at site"
@@ -44,14 +42,13 @@ export function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* HERO HEADER + SUBS */}
+      {/* HERO CONTENT */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4">
         <motion.h1
           className="text-5xl md:text-7xl font-bold mb-6"
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: false, amount: 0.5 }}
         >
           HAMTEC PROJECTS
         </motion.h1>
@@ -59,9 +56,8 @@ export function Hero() {
         <motion.p
           className="text-xl md:text-2xl mb-8 text-gray-200"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          viewport={{ once: false, amount: 0.5 }}
         >
           "Building Excellence, Managing Success."
         </motion.p>
@@ -69,9 +65,8 @@ export function Hero() {
         <motion.p
           className="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-300"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          viewport={{ once: false, amount: 0.5 }}
         >
           Transform spaces and ideas into sustainable realities with our
           comprehensive construction, landscaping, cleaning, and project
@@ -83,8 +78,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
           variants={buttonContainer}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          animate="show"
         >
           <motion.div
             variants={buttonItem}

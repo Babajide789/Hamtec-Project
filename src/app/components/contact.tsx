@@ -7,13 +7,12 @@ import { Textarea } from "./UIs/textarea";
 import { MapPin, Phone, Mail, Globe } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
-
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   show: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.6, ease: ["easeOut"] } 
+    transition: { duration: 0.6, ease: "easeOut" } 
   },
 };
 
@@ -30,7 +29,7 @@ const itemLeft: Variants = {
   show: { 
     opacity: 1, 
     x: 0, 
-    transition: { duration: 0.6, ease: ["easeOut"] } 
+    transition: { duration: 0.6, ease: "easeOut" } 
   },
 };
 
@@ -39,10 +38,9 @@ const itemRight: Variants = {
   show: { 
     opacity: 1, 
     x: 0, 
-    transition: { duration: 0.6, ease: ["easeOut"] } 
+    transition: { duration: 0.6, ease: "easeOut" } 
   },
 };
-
 
 const iconVariant: Variants = {
   hidden: { opacity: 0, scale: 0.6, rotate: -30 },
@@ -62,8 +60,7 @@ export function Contact() {
         <motion.div
           variants={fadeUp}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.3 }}
+          animate="show"   // ⬅️ changed from whileInView to animate
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
@@ -78,8 +75,7 @@ export function Contact() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.2 }}
+            animate="show"   // ⬅️ render immediately
             className="space-y-8"
           >
             <motion.div variants={fadeUp}>
@@ -91,7 +87,7 @@ export function Contact() {
               </p>
             </motion.div>
 
-            {/* INFO INPUTS */}
+            {/* INFO ITEMS */}
             <motion.div variants={staggerContainer} className="space-y-6">
               {[
                 {
@@ -120,7 +116,6 @@ export function Contact() {
                   variants={itemLeft}
                   className="flex items-start space-x-4"
                 >
-                  
                   <motion.div
                     variants={iconVariant}
                     className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0"
@@ -139,10 +134,7 @@ export function Contact() {
             </motion.div>
 
             {/* SERVICE SECTION */}
-            <motion.div
-              variants={fadeUp}
-              className="bg-primary/10 p-6 rounded-lg"
-            >
+            <motion.div variants={fadeUp} className="bg-primary/10 p-6 rounded-lg">
               <h4 className="font-bold mb-2">Our Service Areas</h4>
               <p className="text-muted-foreground">
                 We proudly serve Regina, Saskatchewan, and surrounding areas.
@@ -155,8 +147,7 @@ export function Contact() {
           <motion.div
             variants={itemRight}
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
+            animate="show"   // ⬅️ loads immediately now
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
           >

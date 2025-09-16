@@ -17,7 +17,7 @@ const cardVariants: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring" as const, stiffness: 120, damping: 18 },
+    transition: { type: "spring", stiffness: 120, damping: 18 },
   },
 };
 
@@ -27,7 +27,7 @@ const iconVariants: Variants = {
     scale: 1,
     rotate: 0,
     opacity: 1,
-    transition: { type: "spring" as const, stiffness: 250, damping: 12 },
+    transition: { type: "spring", stiffness: 250, damping: 12 },
   },
 };
 
@@ -59,12 +59,11 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-20">
       <div className="container mx-auto px-4 py-8">
-        {/* TESTIMONIAL HEADUNG */}
+        {/* SECTION HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.3 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-6">What Our Clients Say</h2>
@@ -78,8 +77,7 @@ export function Testimonials() {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          animate="show"
           className="grid md:grid-cols-3 gap-8"
         >
           {testimonials.map((testimonial, index) => (
@@ -92,12 +90,12 @@ export function Testimonials() {
             >
               <Card className="p-6 hover:shadow-2xl transition-all duration-300 h-full flex flex-col justify-between">
                 <CardContent className="pt-6 flex flex-col justify-between h-full">
-                  {/* DOUBLE QUOTE ICON */}
+                  {/* QUOTE ICON */}
                   <motion.div variants={iconVariants}>
                     <Quote className="w-8 h-8 text-primary mb-4" />
                   </motion.div>
 
-                  {/* TESTIMONIAL TEXT */}
+                  {/* TEXT */}
                   <p className="text-muted-foreground mb-6 italic flex-grow">
                     "{testimonial.content}"
                   </p>
@@ -111,7 +109,7 @@ export function Testimonials() {
                         animate={{ scale: 1 }}
                         transition={{
                           delay: i * 0.1 + index * 0.2,
-                          type: "spring" as const,
+                          type: "spring",
                           stiffness: 300,
                           damping: 12,
                         }}
