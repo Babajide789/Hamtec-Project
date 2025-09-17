@@ -53,7 +53,7 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b">
+    <header className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-700">
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* LOGO */}
@@ -74,10 +74,10 @@ export function Header() {
 
             {/* LOGO TEXT */}
             <div className="leading-tight">
-              <h1 className="text-base sm:text-2xl font-extrabold tracking-wide text-primary">
-                HAMTEC <span className="text-primary">PROJECTS</span>
+              <h1 className="text-base sm:text-2xl font-extrabold tracking-wide text-primary dark:text-primary/80">
+                HAMTEC <span className="text-primary dark:text-primary/80">PROJECTS</span>
               </h1>
-              <p className="text-[10px] sm:text-sm text-muted-foreground tracking-wide">
+              <p className="text-[10px] sm:text-sm text-gray-600 dark:text-gray-400 tracking-wide">
                 Building Excellence, Managing Success
               </p>
             </div>
@@ -89,7 +89,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-foreground hover:text-primary transition-colors ${
+                className={`text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary/80 transition-colors ${
                   pathname === link.href ? "font-bold" : ""
                 }`}
               >
@@ -100,7 +100,7 @@ export function Header() {
             <Link href="/contact-us" passHref>
               <Button
                 asChild
-                className={`bg-primary text-white hover:bg-primary/90 ${
+                className={`bg-primary text-white hover:bg-primary/90 dark:bg-primary/80 dark:hover:bg-primary w-full ${
                   pathname === "/contact-us" ? "font-bold" : ""
                 }`}
               >
@@ -109,7 +109,7 @@ export function Header() {
             </Link>
           </nav>
 
-          {/*MOBILE MHAMBURGER */}
+          {/* MOBILE HAMBURGER */}
           <div ref={menuContainerRef} className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -117,17 +117,17 @@ export function Header() {
             >
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-black rounded mb-1"
+                className="w-6 h-0.5 bg-black dark:bg-white rounded mb-1"
                 transition={{ duration: 0.3 }}
               />
               <motion.span
                 animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-6 h-0.5 bg-black rounded mb-1"
+                className="w-6 h-0.5 bg-black dark:bg-white rounded mb-1"
                 transition={{ duration: 0.3 }}
               />
               <motion.span
                 animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-black rounded"
+                className="w-6 h-0.5 bg-black dark:bg-white rounded"
                 transition={{ duration: 0.3 }}
               />
             </button>
@@ -140,7 +140,7 @@ export function Header() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+                  className="fixed inset-0 bg-black/30 dark:bg-black/50 backdrop-blur-sm z-40"
                   onClick={() => setIsOpen(false)}
                 />
               )}
@@ -157,7 +157,7 @@ export function Header() {
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="absolute top-14 right-4 z-50"
                 >
-                  <div className="bg-white rounded-xl shadow-2xl p-6 w-64 flex flex-col items-center space-y-6">
+                  <div className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl p-6 w-64 flex flex-col items-center space-y-6">
                     {navLinks.map((link, i) => (
                       <motion.div
                         key={link.href}
@@ -168,7 +168,7 @@ export function Header() {
                       >
                         <Link
                           href={link.href}
-                          className={`text-lg text-foreground hover:text-primary transition-colors ${
+                          className={`text-lg text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary/80 transition-colors ${
                             pathname === link.href ? "font-bold" : ""
                           }`}
                           onClick={() => setIsOpen(false)}
@@ -186,12 +186,17 @@ export function Header() {
                     >
                       <Link href="/contact-us" passHref>
                         <Button
-                          asChild
-                          className="bg-primary text-white hover:bg-primary/90 w-full"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <span>Contact Us</span>
-                        </Button>
+                        asChild
+                        className="
+                          bg-primary text-white hover:bg-primary/90
+                          dark:bg-white dark:text-primary dark:hover:bg-gray-200
+                          w-full
+                        "
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <span>Contact Us</span>
+                      </Button>
+
                       </Link>
                     </motion.div>
                   </div>

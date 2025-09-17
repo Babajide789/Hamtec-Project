@@ -127,7 +127,7 @@ export function Services() {
                       whileInView="show"
                       viewport={{ once: false, amount: 0.5 }}
                     >
-                      <IconComponent className="w-6 h-6 text-white" />
+                      <IconComponent className="w-6 h-6 text-primary-foreground" />
                     </motion.div>
                   </div>
 

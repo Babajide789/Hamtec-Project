@@ -65,7 +65,7 @@ export function About() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.9, type: "spring" }}
                 >
-                  <Eye className="w-8 h-8 text-white" />
+                  <Eye className="w-8 h-8 text-primary-foreground" />
                 </motion.div>
 
                 <h3 className="text-xl font-bold mb-4">Vision</h3>
@@ -92,7 +92,7 @@ export function About() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.9, type: "spring" }}
                 >
-                  <Target className="w-8 h-8 text-white" />
+                  <Target className="w-8 h-8 text-primary-foreground" />
                 </motion.div>
 
                 <h3 className="text-xl font-bold mb-4">Mission</h3>
@@ -129,7 +129,7 @@ export function About() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.9, type: "spring" }}
                 >
-                  <Heart className="w-8 h-8 text-white" />
+                  <Heart className="w-8 h-8 text-primary-foreground" />
                 </motion.div>
 
                 <h3 className="text-xl font-bold mb-4">Purpose</h3>

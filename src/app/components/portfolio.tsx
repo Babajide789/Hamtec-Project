@@ -136,7 +136,7 @@ export function Portfolio() {
                       stiffness: 350,
                     }}
                   >
-                    <Badge className="absolute top-4 left-4 bg-primary text-white cursor-pointer">
+                    <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground cursor-pointer">
                       {project.category}
                     </Badge>
                   </motion.div>

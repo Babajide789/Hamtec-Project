@@ -60,7 +60,7 @@ export function Contact() {
         <motion.div
           variants={fadeUp}
           initial="hidden"
-          animate="show"   // ⬅️ changed from whileInView to animate
+          animate="show"
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
@@ -75,7 +75,7 @@ export function Contact() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate="show"   // ⬅️ render immediately
+            animate="show"
             className="space-y-8"
           >
             <motion.div variants={fadeUp}>
@@ -147,7 +147,7 @@ export function Contact() {
           <motion.div
             variants={itemRight}
             initial="hidden"
-            animate="show"   // ⬅️ loads immediately now
+            animate="show"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
           >
