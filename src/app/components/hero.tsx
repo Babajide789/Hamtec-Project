@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+
 const buttonContainer = {
   hidden: { opacity: 0, scale: 0.9 },
   show: {
