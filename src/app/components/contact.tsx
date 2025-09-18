@@ -191,7 +191,7 @@ export function Contact() {
                   </label>
                   <select
                     id="service"
-                    className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                    className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-background"
                   >
                     <option value="">Select a service</option>
                     <option value="construction">

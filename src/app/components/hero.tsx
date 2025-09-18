@@ -4,9 +4,6 @@ import { Button } from "./UIs/button";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-
 
 const buttonContainer = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -26,11 +23,6 @@ const buttonItem = {
 };
 
 export function Hero() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null; // prevents mismatch before hydration
   return (
     <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700 text-white overflow-hidden">
       {/* OVERLAY */}
@@ -67,7 +59,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          "Building Excellence, Managing Success."
+          Building Excellence, Managing Success.
         </motion.p>
 
         <motion.p
@@ -112,9 +104,11 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="px-8 py-3 cursor-pointer rounded-md font-medium transition-colors 
-                bg-white text-black 
-                dark:bg-black dark:text-white hover:bg-secondary/50"
+                className="
+                  px-8 py-3 cursor-pointer rounded-md font-medium transition-colors
+                  bg-white text-black hover:bg-gray-100 hover:text-black
+                  dark:bg-black dark:text-white dark:hover:bg-gray-900 dark:hover:text-white
+                "
               >
                 Get Quote
               </Button>

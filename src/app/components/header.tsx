@@ -188,13 +188,9 @@ export function Header() {
                         <Button
                           asChild
                           onClick={() => setIsOpen(false)}
-                          className="px-8 py-3 cursor-pointer font-medium transition-colors
-                            bg-primary text-white hover:bg-primary/90
-                            dark:bg-white dark:text-black dark:hover:bg-gray-200"
                         >
                           <span>Contact Us</span>
                         </Button>
-
                       </Link>
                     </motion.div>
                   </div>
