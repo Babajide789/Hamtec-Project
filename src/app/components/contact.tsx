@@ -91,22 +91,22 @@ export function Contact() {
             <motion.div variants={staggerContainer} className="space-y-6">
               {[
                 {
-                  icon: <MapPin className="w-6 h-6 text-white" />,
+                  icon: <MapPin className="w-6 h-6 text-primary-foreground" />,
                   title: "Address",
                   text: "82 Barr Street\nRegina, SK, Canada",
                 },
                 {
-                  icon: <Phone className="w-6 h-6 text-white" />,
+                  icon: <Phone className="w-6 h-6 text-primary-foreground" />,
                   title: "Phone",
                   text: "+1 306 519 9602",
                 },
                 {
-                  icon: <Mail className="w-6 h-6 text-white" />,
+                  icon: <Mail className="w-6 h-6 text-primary-foreground" />,
                   title: "Email",
                   text: "info@hamtecprojects.com",
                 },
                 {
-                  icon: <Globe className="w-6 h-6 text-white" />,
+                  icon: <Globe className="w-6 h-6 text-primary-foreground" />,
                   title: "Website",
                   text: "hamtecprojects.com",
                 },
@@ -222,7 +222,7 @@ export function Contact() {
                 </div>
 
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="w-full bg-primary text-white hover:bg-primary/90">
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                     Send Message
                   </Button>
                 </motion.div>
