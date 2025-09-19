@@ -26,9 +26,8 @@ export function ThemeToggle() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Ripple / Pulse animation */}
       <motion.span
-        key={theme} // triggers animation on theme change
+        key={theme}
         className="absolute inset-0 rounded-full"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1.4, opacity: 0.15 }}
