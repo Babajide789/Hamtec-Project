@@ -5,6 +5,7 @@ import { Footer } from "./components/footer";
 import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "./providers";
 import { ThemeToggle } from "./components/ThemeToggle";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Hamtec Project",
@@ -31,6 +32,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-TYYL7GZPY1`}
+        />
+        <Script
+          id="ga-setup"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TYYL7GZPY1');
+          `}
+        </Script>
+      </head>
       <body>
         <Providers>
           <div className="min-h-screen flex flex-col">
