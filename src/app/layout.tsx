@@ -50,7 +50,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        <Providers>
+        {/* <Providers> */}
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">{children}</main>
@@ -59,8 +59,8 @@ export default function RootLayout({
           </div>
 
           {/* FLOATING THEME TOGGLE */}
-          <ThemeToggle />
-        </Providers>
+          {/* <ThemeToggle /> */}
+        {/* </Providers> */}
       </body>
     </html>
   );
